@@ -56,6 +56,7 @@ impl<P: ?Sized> Clone for Attached<P> {
 #[derive(Clone, Default)]
 // exhaustive: its fields are private, so mods cannot build or destructure it
 pub struct Parts {
+    pub(crate) protocol_adapters: HashMap<horizon_mod_runtime::protocol_version::ProtocolPair, (&'static str, usize, Arc<dyn horizon_mod_runtime::protocol_version::AdapterFactory>)>,
     pub(crate) key_mappings: Vec<(&'static str, crate::KeyRegistration)>,
     /// Settings by owner, in registration order (`Registrar::register_setting`).
     pub(crate) settings: Vec<(&'static str, crate::SettingSpec)>,

@@ -9,6 +9,8 @@ pub mod byte_channel;
 /// A level's capability generations, which kept capabilities compare (arismoko/horizon#3446).
 pub mod capability_generations;
 pub mod dispatch_failures;
+/// Native per-connection protocol adapter contracts.
+pub mod protocol_version;
 /// Load-owned registry names and numeric slots, without game or API key types.
 pub mod registry_keys;
 
